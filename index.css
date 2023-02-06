@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+:root {
+  --color-primary: #121212;
+  --color-secondary: #3399CC;
+  --color-tertiary: #3366ee;
+  --color-subdued: #999999;
+  --color-border: #00000070;
+  --color-shadow: #00000033;
+  --color-background: #FFFFFF;
+}
+
+a, p, h1, h2, h3, h4, h5, h6, li, ul, ol, span, div, label, input, textarea, button, td, th {
+  color: var(--color-primary);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+a, p {
+  font-size: 1.2rem;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+a:active {
+  color: var(--color-tertiary);
+}
+
+.selected {
+  color: var(--color-tertiary);
+}
+
+body {
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+  color: var(--color-primary);
+}
+
+#avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px auto;
+  border: 2px solid var(--color-primary);
+}
+
+.doubleCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  align-items: flex-end; /* aligns the text to the bottom of the column */
+}
+
+.doubleCol > *:nth-child(even) {
+  text-align: end;
+}
+
+.leftDoubleCol > *:nth-child(even) {
+  text-align: start !important;
+}
+
+.doubleCol > h3 {
+  margin: 0;
+}
+
+.contentFooter {
+  margin-top: 5rem;
+  color: var(--color-subdued);
+}
+
+.linkLike {
+  color: var(--color-tertiary);
+}
+
+textarea {
+  resize: none;
+  background-color: #121212;
+  border: 2px dashed #202020;
+  color: var(--color-primary);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.button {
+  background: var(--color-secondary);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+nav {
+  width: 100vw;
+  height: 82px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 0 5px var(--color-shadow);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+nav ul li {
+  padding: 0 2.5vw;
+  min-width: 100px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  height: calc(100vh - 82px);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-right: 1px solid var(--color-border);
+}
+
+.contact h3 {
+  font-weight: 300;
+}
+
+.content {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+  justify-content: center; /* aligns the content to the center of the page. It just looks better ok */
+}
+
+/* for screen sizes less than 1100px, we should show the mobile view */
+@media screen and (max-width: 1100px) {
+  main {
+    flex-direction: column;
+  }
+  .contact {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+  }
+  .content {
+    padding-left: 0;
+    justify-content: flex-start; /* aligns the content to the top */
+  }
+  .content > h1 {
+    text-align: center;
+  }
+}
+
+progress {
+  height: 10px;
+  border-radius: 10px;
+  width: 100%;
+  color: var(--color-tertiary);
+}
+
+.progressCombo {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.progressCombo > label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+progress::-webkit-progress-value, progress::-moz-progress-bar {
+  background-color: var(--color-primary);
+  /* sorry, this just looked too cool */
+}
+
+.content ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+
+.content ul li {
+  list-style: "- ";
+  font-size: 1.2rem;
+  font-weight: 400;
+}
